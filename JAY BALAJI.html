@@ -1,116 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>KheloBet24 - Fantasy Bonus Offers</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        :root {
-            --primary-color: #00ffc8;
-            --bg-dark: #111827;
-            --bg-header: #1e293b;
-        }
+<meta charset="UTF-8" />
+<title>KheloBet24 - Fantasy Bonus Offers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+    :root {
+        --primary-color: #00ffc8;
+        --bg-dark: #111827;
+        --bg-header: #1e293b;
+        --whatsapp-green: #25d366;
+        --whatsapp-dark-green: #128c7e;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: #fff;
-            line-height: 1.5;
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background:
+            linear-gradient(rgba(15, 32, 39, 0.7), rgba(44, 83, 100, 0.7)),
+            url('./images/Sports-Betting.jpg')
+                no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+        line-height: 1.5;
+    }
+
+    header {
+        background: var(--bg-header);
+        padding: 1rem 1rem 1rem 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .logo {
+        height: 50px;
+        vertical-align: middle;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+        color: var(--primary-color);
+        margin: 0;
+    }
+
+    header p {
+        flex-basis: 100%;
+        margin-top: 0.5rem;
+        color: #ccc;
+        font-size: 1rem;
+    }
+
+    .promo {
+        background: rgba(17, 24, 39, 0.7);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        margin: 1.5rem auto;
+        padding: 2rem 1.2rem;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 600px;
+        box-shadow: 0 0 15px rgba(0, 255, 200, 0.2);
+        text-align: center;
+    }
+
+    .promo h2 {
+        font-size: 1.6rem;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .promo p {
+        font-size: 1rem;
+        color: #ccc;
+    }
+
+    .promo-whatsapp {
+        margin: 1rem auto 2rem;
+        max-width: 600px;
+        background: var(--whatsapp-green);
+        border-radius: 10px;
+        padding: 12px 20px;
+        text-align: center;
+        box-shadow: 0 6px 12px rgba(37, 211, 102, 0.5);
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .promo-whatsapp a {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: white;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .promo-whatsapp img {
+        width: 36px;
+        height: 36px;
+        animation: pulse 2s infinite;
+    }
+
+    .promo-whatsapp:hover {
+        background: #1ebe57;
+    }
+
+    /* Pulsate animation for WhatsApp icon */
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+            filter: drop-shadow(0 0 0 rgba(37, 211, 102, 0));
+        }
+        50% {
+            transform: scale(1.15);
+            filter: drop-shadow(0 0 8px rgba(37, 211, 102, 0.7));
+        }
+    }
+
+    /* Fixed vertical WhatsApp buttons */
+    .whatsapp-multi {
+        position: fixed;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 1000;
+    }
+
+    .whatsapp-contact {
+        border-radius: 50px;
+        padding: 10px 16px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        color: white;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        user-select: none;
+    }
+
+    /* Different backgrounds per contact for variety */
+    .whatsapp-contact.support1 {
+        background: linear-gradient(45deg, #25d366, #128c7e);
+        box-shadow: 0 0 12px #25d366;
+    }
+    .whatsapp-contact.support2 {
+        background: linear-gradient(45deg, #128c7e, #075e54);
+        box-shadow: 0 0 12px #128c7e;
+    }
+    .whatsapp-contact.support3 {
+        background: linear-gradient(45deg, #00c851, #007e33);
+        box-shadow: 0 0 12px #00c851;
+    }
+
+    .whatsapp-contact:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px #00ffcc;
+    }
+
+    .whatsapp-contact img {
+        width: 30px;
+        height: 30px;
+        filter: drop-shadow(0 0 3px rgba(0,0,0,0.4));
+        transition: transform 0.3s ease;
+    }
+
+    .whatsapp-contact:hover img {
+        transform: rotate(15deg) scale(1.2);
+    }
+
+    footer {
+        text-align: center;
+        padding: 1rem;
+        color: #888;
+        font-size: 0.85rem;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        header {
+            flex-direction: column;
+            gap: 6px;
+        }
+        header h1 {
+            font-size: 1.8rem;
+        }
+        .promo h2 {
+            font-size: 1.4rem;
+        }
+        .promo p {
+            font-size: 1rem;
+        }
+        .promo-whatsapp {
+            max-width: 90%;
+            padding: 14px 20px;
+            font-size: 1.1rem;
+        }
+        .promo-whatsapp img {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .whatsapp-multi {
+            display: none;
         }
 
         header {
-            background: var(--bg-header);
-            padding: 2rem 1rem;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            flex-direction: column;
+            gap: 6px;
         }
-
         header h1 {
-            font-size: 2.2rem;
-            color: var(--primary-color);
+            font-size: 1.7rem;
         }
-
-        header p {
-            color: #ccc;
-            margin-top: 10px;
-            font-size: 1rem;
-        }
-
-        .promo {
-            background: var(--bg-dark);
-            margin: 1.5rem auto;
-            padding: 2rem 1.2rem;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 600px;
-            box-shadow: 0 0 15px rgba(0, 255, 200, 0.2);
-            text-align: center;
-        }
-
         .promo h2 {
-            font-size: 1.6rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
         }
-
         .promo p {
+            font-size: 0.95rem;
+        }
+        .promo-whatsapp {
+            width: 90%;
             font-size: 1rem;
-            color: #ccc;
+            padding: 12px 16px;
+            border-radius: 8px;
         }
-
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
+        .promo-whatsapp img {
+            width: 28px;
+            height: 28px;
         }
-
-        .whatsapp-button img {
-            width: 55px;
-            height: 55px;
-            transition: transform 0.3s ease;
-        }
-
-        .whatsapp-button img:hover {
-            transform: scale(1.1);
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem;
-            color: #888;
-            font-size: 0.85rem;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.7rem;
-            }
-            .promo h2 {
-                font-size: 1.3rem;
-            }
-            .promo p {
-                font-size: 0.95rem;
-            }
-            .whatsapp-button img {
-                width: 50px;
-                height: 50px;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
 
 <header>
-    <h1>KheloBet24</h1>
-    <p>Fantasy Sports • Instant Bonuses • 24x7 Support</p>
+    <img src="./images/KheloyarnetLogo.png" alt="KheloBet24 Logo" class="logo" />
+    
+    
 </header>
 
 <div class="promo">
@@ -123,10 +268,26 @@
     <p>Boost your wallet every time you top-up your balance.</p>
 </div>
 
-<!-- WhatsApp Button -->
-<div class="whatsapp-button">
-    <a href="https://wa.me/919911444502" target="_blank">
-        <img src="https://img.icons8.com/color/96/000000/whatsapp--v1.png" alt="Chat on WhatsApp">
+<div class="promo-whatsapp">
+    <a href="https://wa.me/919911444502" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="Chat on WhatsApp" />
+        <span>Chat with Our Expert Now!</span>
+    </a>
+</div>
+
+<!-- Fancy Fixed WhatsApp Buttons -->
+<div class="whatsapp-multi" aria-label="WhatsApp Support Contacts">
+    <a href="https://wa.me/919911444502" target="_blank" rel="noopener noreferrer" class="whatsapp-contact support1" aria-label="WhatsApp Support 1">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="" />
+        <span>Support 1</span>
+    </a>
+    <a href="https://wa.me/919922233344" target="_blank" rel="noopener noreferrer" class="whatsapp-contact support2" aria-label="WhatsApp Support 2">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="" />
+        <span>Support 2</span>
+    </a>
+    <a href="https://wa.me/919933344455" target="_blank" rel="noopener noreferrer" class="whatsapp-contact support3" aria-label="WhatsApp VIP Support">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="" />
+        <span>VIP Support</span>
     </a>
 </div>
 
